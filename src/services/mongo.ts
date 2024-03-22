@@ -9,8 +9,8 @@ async function startConnection(){
         console.log(err,"error")
     });
    await mongoose.connect(MONGO_URL,{
-        useNewUrlParser:true,
-        useUnfiedTopology:true,
+        // useNewUrlParser:true,
+        // useUnfiedTopology:true,
     })
 }
 module.exports=startConnection;

@@ -2,10 +2,10 @@
   "name": "wubante-car-rental-backend",
   "version": "1.0.0",
   "description": "a backend for wubante car rental system",
-  "main": "index.js",
+  "main": "./src/server.ts",
   "scripts": {
-    "start": "nodemon ./src/server.js",
-    "watch": "nodemon ./src/server.js",
+    "start": "nodemon ./src/server.ts",
+    "watch": "nodemon ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
