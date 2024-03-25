@@ -1,6 +1,6 @@
-import {Document,Schema,model} from 'mongoose';
+import {Document,Schema,model,Model} from 'mongoose';
 import imageSchema,{ Image } from '../image.mongo';
-type CarType={
+interface CarType extends Document{
 name:string;
 model:string;
 year:string;
@@ -10,7 +10,7 @@ image:Image;
 category:Schema.Types.ObjectId;
 }
 
-const carSchema=new Schema<CarType>({
+const carSchema:Schema=new Schema({
     name:{
         type:String,
         required:true
@@ -38,9 +38,10 @@ const carSchema=new Schema<CarType>({
     category:{
         type:Schema.Types.ObjectId,
         ref:'Category',
+        required:true,
     }
 
 },{timestamps:true});
 
-const Car=model<CarType>('Car',carSchema);
+const Car:Model<CarType>=model<CarType>('Car',carSchema);
 export default Car;
