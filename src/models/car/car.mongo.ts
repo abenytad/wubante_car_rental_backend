@@ -1,8 +1,8 @@
 import {Document,Schema,model,Model} from 'mongoose';
 import imageSchema,{ Image } from '../image.mongo';
 interface CarType extends Document{
-name:string;
-model:string;
+carName:string;
+carModel:string;
 year:string;
 manufacturer:string;
 pricePerDay:number;
@@ -10,12 +10,12 @@ image:Image;
 category:Schema.Types.ObjectId;
 }
 
-const carSchema:Schema=new Schema({
-    name:{
+const carSchema:Schema=new Schema<CarType>({
+    carName:{
         type:String,
         required:true
     },
-    model:{
+    carModel:{
         type:String,
         required:true
     },

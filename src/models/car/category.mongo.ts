@@ -1,4 +1,4 @@
-import {Schema,model, Document} from 'mongoose';
+import {Schema,model, Document,Model} from 'mongoose';
 import imageSchema,{Image} from '../image.mongo';
 interface CategoryType extends Document{
     name:string;
@@ -8,7 +8,7 @@ interface CategoryType extends Document{
 }
 
 
-const categorySchema=new Schema<CategoryType>({
+const categorySchema:Schema=new Schema<CategoryType>({
     name:{
         type:String,
         required:true,
@@ -26,5 +26,5 @@ const categorySchema=new Schema<CategoryType>({
     }]
 },{timestamps:true});
 
-const Category=model<CategoryType>('Category',categorySchema);
+const Category:Model<CategoryType>=model<CategoryType>('Category',categorySchema);
 export default Category;
