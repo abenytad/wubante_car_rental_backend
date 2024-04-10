@@ -10,3 +10,4 @@ const newRent=async (req:Request,res:Response)=>{
         return res.status(404).json({error:`${err}`})
     }
 }
+export {newRent}

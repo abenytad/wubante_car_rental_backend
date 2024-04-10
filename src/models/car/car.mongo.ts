@@ -15,7 +15,7 @@ const carSchema:Schema=new Schema<CarType>({
         type:String,
         required:true
     },
-    carModel:{
+    carModel:{ 
         type:String,
         required:true
     },
