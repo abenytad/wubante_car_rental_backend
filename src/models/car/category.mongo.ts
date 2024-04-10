@@ -1,6 +1,6 @@
 import {Schema,model, Document,Model} from 'mongoose';
 import imageSchema,{Image} from '../image.mongo';
-interface CategoryType extends Document{
+export interface CategoryType extends Document{
     name:string;
     description?:string;
     image:Image

@@ -1,6 +1,6 @@
 import {Document,Schema,model,Model} from 'mongoose';
 import imageSchema,{ Image } from '../image.mongo';
-interface CarType extends Document{
+export interface CarType extends Document{
 carName:string;
 carModel:string;
 year:string;

@@ -1,18 +1,13 @@
 import {Model,model,Schema,Document} from 'mongoose';
 import imageSchema,{Image} from '../image.mongo';
-interface UserType extends Document {
-    userId:Schema.Types.ObjectId;
+export interface UserType extends Document {
     userName:string;
     phoneNumber:number;
     password:string;
-    userImage:Image;
+    userImage?:Image;
 }
 
 const userSchema:Schema=new Schema<UserType>({
-    userId:{
-        type:Schema.Types.ObjectId,
-        required:true,
-    },
     userName:{
         type:String,
         required:[true,'name is required'],

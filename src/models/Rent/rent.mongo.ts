@@ -5,7 +5,7 @@ interface PdfFormatType extends Document {
     data:Buffer;
     contentType:string;
 }
-interface RentType extends Document {
+export interface RentType extends Document {
     carId:Schema.Types.ObjectId;
     userId:Schema.Types.ObjectId;
     userLicense:PdfFormatType;
@@ -48,3 +48,4 @@ const rentSchema=new Schema<RentType>({
     }
 },{timestamps:true});
 const Rent=model<RentType>('Rent',rentSchema);
+export default Rent;
