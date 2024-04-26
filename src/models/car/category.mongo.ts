@@ -1,9 +1,9 @@
 import {Schema,model, Document,Model} from 'mongoose';
-import imageSchema,{Image} from '../image.mongo';
+
 export interface CategoryType extends Document{
     name:string;
     description?:string;
-    image:Image
+    image:string;
     cars:Schema.Types.ObjectId[]
 }
 
@@ -17,7 +17,7 @@ const categorySchema:Schema=new Schema<CategoryType>({
         type:String,
     },
     image:{
-        type:imageSchema,
+        type:String,
         required:true,
     },
     cars:[{
