@@ -1,10 +1,9 @@
 import {Model,model,Schema,Document} from 'mongoose';
-import imageSchema,{Image} from '../image.mongo';
 export interface UserType extends Document {
     userName:string;
     phoneNumber:number;
     password:string;
-    userImage?:Image;
+    userImage?:string;
 }
 
 const userSchema:Schema=new Schema<UserType>({
@@ -21,7 +20,7 @@ const userSchema:Schema=new Schema<UserType>({
         required:true
     },
     userImage:{
-        type:imageSchema,
+        type:String,
     }
 },{timestamps:true}) ;
 const User:Model<UserType>=model<UserType>('User',userSchema);
